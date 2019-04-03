@@ -5,15 +5,19 @@ All aspects related to MRI reconstruction in this tutorial will be teached by [P
 
 ## Slides
 
-Slides area available in pdf format in the slides folder. 
+Slides area available in pdf format in the [slides](https://github.com/philouc/isbi19-tutorial/tree/master/slides) folder. 
 
 ## Code for ISBI'19 Tutorial
 
 ### Matlab
 
-Here, The repository gathers original Matlab code developed by my former PhD students, Nicolas Chauffert and Carole Lazarus and located in the matlab folder.
+Here, The repository gathers original Matlab code developed by my former PhD students, Nicolas Chauffert and Carole Lazarus and located in the [matlab](https://github.com/philouc/isbi19-tutorial/tree/master/matlab) folder.
 
 ### Python
 
-As we're moving to Python langauge, I and my student Nicolas Chartier started to recode the basics form MRI sampling. Note that image reconstruction we rely on our own python package, namely PySAP : https://github.com/CEA-COSMIC/pysap and its dedicated plugin for MR image reconstruction: https://github.com/CEA-COSMIC/pysap-mri.
+As we're moving to Python langauge, I and my student Nicolas Chartier started to recode the basics form MRI sampling in python. You can find some ipython Notebooks in the [Python](https://github.com/philouc/isbi19-tutorial/tree/master/python) folder
+
+
+Note that we also develop our own image reconstruction python package for multiple Fourier imaging modalities, namely [PySAP](https://github.com/CEA-COSMIC/pysap) and its dedicated plugin for MR image: [pysap-mri](https://github.com/CEA-COSMIC/pysap-mri).
+
 
