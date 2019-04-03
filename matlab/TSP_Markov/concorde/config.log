@@ -1,0 +1,390 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:593: checking host system type
+configure:619: checking for prespecified compiler options
+configure:716: checking for gcc
+configure:829: checking whether the C compiler (gcc -g -O3 ) works
+configure:845: gcc -o conftest -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs  conftest.c  1>&5
+configure:842:1: warning: return type defaults to 'int' [-Wreturn-type]
+   done
+ ^
+configure:842:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+configure:871: checking whether the C compiler (gcc -g -O3 ) is a cross-compiler
+configure:876: checking whether we are using GNU C
+configure:885: gcc -E conftest.c
+configure:904: checking whether gcc accepts -g
+configure:936: checking whether make sets ${MAKE}
+configure:965: checking for ranlib
+configure:997: checking for sh
+configure:1041: checking for file suffixes
+configure:1176: checking for sqrt in -lm
+configure:1195: gcc -o conftest -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs  conftest.c -lm   1>&5
+configure:1188:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ echo "configure:1176: checking for sqrt in -lm" >&5
+ ^
+configure:1188:6: warning: conflicting types for built-in function 'sqrt'
+ echo "configure:1176: checking for sqrt in -lm" >&5
+      ^
+configure:1190:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+     ^
+configure:1225: checking for -lnsl
+configure:1242: gcc -o conftest -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs  conftest.c -lm  1>&5
+configure:1235:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+configure:1237:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ echo "configure:1225: checking for -lnsl" >&5
+     ^
+configure:1294: checking for -lsocket
+configure:1311: gcc -o conftest -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs  conftest.c -lm  1>&5
+configure:1304:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+configure:1306:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ echo "configure:1294: checking for -lsocket" >&5
+     ^
+configure:1361: checking for bfd_open_file in -lbfd
+configure:1380: gcc -o conftest -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs  conftest.c -lbfd  -lm  1>&5
+configure:1373:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ echo "configure:1361: checking for bfd_open_file in -lbfd" >&5
+ ^
+configure:1375:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+     ^
+/usr/bin/ld: cannot find -lbfd
+collect2: error: ld returned 1 exit status
+configure: failed program was:
+#line 1369 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char bfd_open_file();
+
+int main() {
+bfd_open_file()
+; return 0; }
+configure:1408: checking for xstrerror in -liberty
+configure:1427: gcc -o conftest -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs  conftest.c -liberty  -lm  1>&5
+configure:1420:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ echo "configure:1408: checking for xstrerror in -liberty" >&5
+ ^
+configure:1422:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+     ^
+/usr/bin/ld: cannot find -liberty
+collect2: error: ld returned 1 exit status
+configure: failed program was:
+#line 1416 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char xstrerror();
+
+int main() {
+xstrerror()
+; return 0; }
+configure:1678: checking how to run the C preprocessor
+configure:1699: gcc -E -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c >/dev/null 2>conftest.out
+configure:1758: checking for ANSI C header files
+configure:1771: gcc -E -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c >/dev/null 2>conftest.out
+configure:1838: gcc -o conftest -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs  conftest.c -lm  1>&5
+configure:1832:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+configure: In function 'main':
+configure:1833:67: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+configure:1833:67: warning: incompatible implicit declaration of built-in function 'exit'
+configure:1833:67: note: include '<stdlib.h>' or provide a declaration of 'exit'
+configure:1862: checking whether time.h and sys/time.h may both be included
+configure:1876: gcc -c -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c 1>&5
+configure:1871:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+   int x[] = {25, 17};
+     ^
+configure: In function 'main':
+configure:1872:12: warning: unused variable 'tp' [-Wunused-variable]
+   const int *foo = &x[0];
+            ^
+configure:1900: checking for stdlib.h
+configure:1910: gcc -E -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c >/dev/null 2>conftest.out
+configure:1900: checking for math.h
+configure:1910: gcc -E -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c >/dev/null 2>conftest.out
+configure:1900: checking for string.h
+configure:1910: gcc -E -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c >/dev/null 2>conftest.out
+configure:1900: checking for strings.h
+configure:1910: gcc -E -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c >/dev/null 2>conftest.out
+configure:1900: checking for errno.h
+configure:1910: gcc -E -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c >/dev/null 2>conftest.out
+configure:1900: checking for assert.h
+configure:1910: gcc -E -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c >/dev/null 2>conftest.out
+configure:1900: checking for sys/time.h
+configure:1910: gcc -E -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c >/dev/null 2>conftest.out
+configure:1900: checking for time.h
+configure:1910: gcc -E -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c >/dev/null 2>conftest.out
+configure:1900: checking for stddef.h
+configure:1910: gcc -E -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c >/dev/null 2>conftest.out
+configure:1900: checking for unistd.h
+configure:1910: gcc -E -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c >/dev/null 2>conftest.out
+configure:1900: checking for malloc.h
+configure:1910: gcc -E -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c >/dev/null 2>conftest.out
+configure:1900: checking for sys/types.h
+configure:1910: gcc -E -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c >/dev/null 2>conftest.out
+configure:1900: checking for sys/stat.h
+configure:1910: gcc -E -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c >/dev/null 2>conftest.out
+configure:1900: checking for fcntl.h
+configure:1910: gcc -E -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c >/dev/null 2>conftest.out
+configure:1900: checking for signal.h
+configure:1910: gcc -E -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c >/dev/null 2>conftest.out
+configure:1900: checking for sys/socket.h
+configure:1910: gcc -E -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c >/dev/null 2>conftest.out
+configure:1900: checking for netinet/in.h
+configure:1910: gcc -E -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c >/dev/null 2>conftest.out
+configure:1900: checking for netdb.h
+configure:1910: gcc -E -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c >/dev/null 2>conftest.out
+configure:1900: checking for sys/resource.h
+configure:1910: gcc -E -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c >/dev/null 2>conftest.out
+configure:1900: checking for sys/param.h
+configure:1910: gcc -E -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c >/dev/null 2>conftest.out
+configure:1900: checking for sys/times.h
+configure:1910: gcc -E -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c >/dev/null 2>conftest.out
+configure:2001: checking for working const
+configure:2055: gcc -c -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c 1>&5
+configure:2008:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+configure: In function 'main':
+configure:2025:5: warning: cast discards 'const' qualifier from pointer target type [-Wcast-qual]
+ #ifdef __cplusplus
+     ^
+configure:2029:15: warning: unused variable 's' [-Wunused-variable]
+configure:2034:7: warning: declaration of 'x' shadows a previous local [-Wshadow]
+configure:2011:39: note: shadowed declaration is here
+configure:2034:3: warning: traditional C rejects automatic aggregate initialization [-Wtraditional]
+ EOF
+   ^
+configure:2040:8: warning: declaration of 'p' shadows a previous local [-Wshadow]
+   cat conftest.$ac_ext >&5
+        ^
+configure:2014:8: note: shadowed declaration is here
+ if eval "test \"`echo '$''{'ac_cv_type_signal'+set}'`\" = set"; then
+        ^
+configure:2049:13: warning: unused variable 'foo' [-Wunused-variable]
+ #define RETSIGTYPE $ac_cv_type_signal
+             ^
+configure:2017:27: warning: unused variable 'zero' [-Wunused-variable]
+   cat > conftest.$ac_ext <<EOF
+                           ^
+configure:2011:39: warning: unused variable 'x' [-Wunused-variable]
+configure:2031:5: warning: 't' is used uninitialized in this function [-Wuninitialized]
+ int main() {
+     ^
+configure:2046:21: warning: 'b' is used uninitialized in this function [-Wuninitialized]
+configure:2078: checking for void
+configure:2090: gcc -c -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c 1>&5
+configure:2085:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+configure: In function 'main':
+configure:2086:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+configure:2086:1: warning: nested extern declaration of 'x' [-Wnested-externs]
+configure:2111: checking for size_t
+configure:2144: checking for pid_t
+configure:2177: checking return type of signal handlers
+configure:2199: gcc -c -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c 1>&5
+configure:2191:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ EOF
+ ^
+configure:2191:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+configure:2194:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+   eval "cc_cv_proto_getrusage=yes"
+     ^
+configure: In function 'main':
+configure:2195:5: warning: unused variable 'i' [-Wunused-variable]
+configure:2218: checking for u_char
+configure:2254: checking for missing printf prototype
+configure:2266: gcc -c -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c 1>&5
+configure:2261:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ if eval "test \"`echo '$''{'cc_cv_signal_signal'+set}'`\" = set"; then
+     ^
+configure: In function 'main':
+configure:2262:8: error: incompatible type for argument 1 of 'printf'
+   echo $ac_n "(cached) $ac_c" 1>&6
+        ^
+In file included from /usr/include/stdio.h:936:0,
+                 from configure:2260:
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:102:1: note: expected 'const char * __restrict__' but argument is of type 'double'
+ printf (const char *__restrict __fmt, ...)
+ ^
+configure: failed program was:
+#line 2259 "configure"
+#include "confdefs.h"
+#include <stdio.h>
+int main() {
+printf(3.0)
+; return 0; }
+configure:2290: checking for missing gethostname prototype
+configure:2305: gcc -c -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c 1>&5
+configure:2300:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ #define CCSIGNAL_NONE 1
+     ^
+configure: In function 'main':
+configure:2301:1: warning: implicit declaration of function 'gethostname' [-Wimplicit-function-declaration]
+ EOF
+ ^
+configure:2301:1: warning: nested extern declaration of 'gethostname' [-Wnested-externs]
+configure:2329: checking for missing getrusage prototype
+configure:2356: gcc -c -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c 1>&5
+configure:2351:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+configure: In function 'main':
+configure:2352:1: error: too few arguments to function 'getrusage'
+   cat > conftest.$ac_ext <<EOF
+ ^
+In file included from configure:2349:0:
+/usr/include/x86_64-linux-gnu/sys/resource.h:87:12: note: declared here
+ extern int getrusage (__rusage_who_t __who, struct rusage *__usage) __THROW;
+            ^
+configure: failed program was:
+#line 2334 "configure"
+#include "confdefs.h"
+
+#ifdef TIME_WITH_SYS_TIME
+# include <sys/time.h>
+# include <time.h>
+#else
+# ifdef HAVE_SYS_TIME_H
+#  include <sys/time.h>
+# else
+#  ifdef HAVE_TIME_H
+#   include <time.h>
+#  endif
+# endif
+#endif
+#ifdef HAVE_SYS_RESOURCE_H
+#include <sys/resource.h>
+#endif
+int main() {
+getrusage(3.0)
+; return 0; }
+configure:2382: checking usable sigaction()
+configure:2404: gcc -c -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c 1>&5
+configure:2392:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+   echo $ac_n "(cached) $ac_c" 1>&6
+     ^
+configure: In function 'main':
+configure:2393:18: error: storage size of 'n' isn't known
+configure:2394:2: warning: nested extern declaration of 'h' [-Wnested-externs]
+   cat > conftest.$ac_ext <<EOF
+  ^
+configure:2396:6: warning: implicit declaration of function 'sigemptyset' [-Wimplicit-function-declaration]
+ #include "confdefs.h"
+      ^
+configure:2396:2: warning: nested extern declaration of 'sigemptyset' [-Wnested-externs]
+ #include "confdefs.h"
+  ^
+configure:2399:6: warning: implicit declaration of function 'sigaction' [-Wimplicit-function-declaration]
+ #include <assert.h>
+      ^
+configure:2399:2: warning: nested extern declaration of 'sigaction' [-Wnested-externs]
+ #include <assert.h>
+  ^
+configure:2395:6: warning: variable 'x' set but not used [-Wunused-but-set-variable]
+ #line 2559 "configure"
+      ^
+configure:2393:18: warning: unused variable 'n' [-Wunused-variable]
+configure: failed program was:
+#line 2387 "configure"
+#include "confdefs.h"
+#ifdef HAVE_SIGNAL_H
+#include <signal.h>
+#endif
+
+int main() {
+struct sigaction n;
+ extern RETSIGTYPE (h)(int signum);
+ int x;
+ x = sigemptyset(&n.sa_mask);
+ n.sa_handler=h;
+ n.sa_flags=4;
+ x = sigaction(0,&n,(struct sigaction*)0);
+
+; return 0; }
+configure:2424: checking usable signal()
+configure:2444: gcc -c -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c 1>&5
+configure:2434:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ #define $ac_tr_func 1
+     ^
+configure: In function 'main':
+configure:2436:2: warning: nested extern declaration of 'h' [-Wnested-externs]
+configure:2437:6: warning: variable 'x' set but not used [-Wunused-but-set-variable]
+configure:2474: checking for __attribute__
+configure:2486: gcc -c -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs conftest.c 1>&5
+configure:2481:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+configure: In function 'main':
+configure:2482:1: warning: ISO C forbids nested functions [-Wpedantic]
+   if test -w $cache_file; then
+ ^
+configure:2554: checking for gethostname
+configure:2582: gcc -o conftest -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs  conftest.c -lm  1>&5
+configure:2566:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ s%@datadir@%$datadir%g
+ ^
+configure:2568:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ s%@sharedstatedir@%$sharedstatedir%g
+     ^
+configure:2554: checking for socket
+configure:2582: gcc -o conftest -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs  conftest.c -lm  1>&5
+configure:2566:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ s%@datadir@%$datadir%g
+ ^
+configure:2568:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ s%@sharedstatedir@%$sharedstatedir%g
+     ^
+configure:2554: checking for strdup
+configure:2582: gcc -o conftest -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs  conftest.c -lm  1>&5
+configure:2566:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ s%@datadir@%$datadir%g
+ ^
+configure:2568:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ s%@sharedstatedir@%$sharedstatedir%g
+     ^
+configure:2554: checking for getrusage
+configure:2582: gcc -o conftest -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs  conftest.c -lm  1>&5
+configure:2566:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ s%@datadir@%$datadir%g
+ ^
+configure:2568:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ s%@sharedstatedir@%$sharedstatedir%g
+     ^
+configure:2554: checking for times
+configure:2582: gcc -o conftest -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs  conftest.c -lm  1>&5
+configure:2566:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ s%@datadir@%$datadir%g
+ ^
+configure:2568:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ s%@sharedstatedir@%$sharedstatedir%g
+     ^
+configure:2554: checking for clock
+configure:2582: gcc -o conftest -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs  conftest.c -lm  1>&5
+configure:2566:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ s%@datadir@%$datadir%g
+ ^
+configure:2568:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ s%@sharedstatedir@%$sharedstatedir%g
+     ^
+configure:2554: checking for sleep
+configure:2582: gcc -o conftest -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs  conftest.c -lm  1>&5
+configure:2566:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ s%@datadir@%$datadir%g
+ ^
+configure:2568:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ s%@sharedstatedir@%$sharedstatedir%g
+     ^
+configure:2554: checking for sigaction
+configure:2582: gcc -o conftest -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs  conftest.c -lm  1>&5
+configure:2566:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ s%@datadir@%$datadir%g
+ ^
+configure:2568:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ s%@sharedstatedir@%$sharedstatedir%g
+     ^
+configure:2554: checking for signal
+configure:2582: gcc -o conftest -g -O3 -ansi -pedantic -Wall -W -Wtraditional -Wundef -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs  conftest.c -lm  1>&5
+configure:2566:1: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ s%@datadir@%$datadir%g
+ ^
+configure:2568:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ s%@sharedstatedir@%$sharedstatedir%g
+     ^

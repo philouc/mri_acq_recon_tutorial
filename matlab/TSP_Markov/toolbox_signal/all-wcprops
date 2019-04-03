@@ -1,0 +1,473 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/matlabcompanion/!svn/ver/10/wavelet-tour/toolbox_signal
+END
+perform_thresholding.m
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/matlabcompanion/!svn/ver/9/wavelet-tour/toolbox_signal/perform_thresholding.m
+END
+image_resize.sci
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/image_resize.sci
+END
+parrot-mask.png
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/parrot-mask.png
+END
+perform_stft.sci
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/perform_stft.sci
+END
+compute_entropy.m
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/compute_entropy.m
+END
+load_signal.sci
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/load_signal.sci
+END
+peppers-bw.bin
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_signal/peppers-bw.bin
+END
+set_axis.sci
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/set_axis.sci
+END
+boat.bin
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_signal/boat.bin
+END
+perform_arith_fixed.sci
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/perform_arith_fixed.sci
+END
+load_image.sci
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/load_image.sci
+END
+image_resize.m
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/image_resize.m
+END
+psnr.sci
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/psnr.sci
+END
+lena.png
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_signal/lena.png
+END
+compute_conditional_histogram.m
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/compute_conditional_histogram.m
+END
+set_axis.m
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/set_axis.m
+END
+plot_sparse_diracs.m
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/plot_sparse_diracs.m
+END
+load_image.m
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/load_image.m
+END
+barb.bin
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_signal/barb.bin
+END
+write_bin.m
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/write_bin.m
+END
+snr.sci
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/snr.sci
+END
+peform_wiener_filtering.sci
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/peform_wiener_filtering.sci
+END
+hist.sci
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/hist.sci
+END
+mandrill.png
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_signal/mandrill.png
+END
+perform_convolution.sci
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/perform_convolution.sci
+END
+compute_gaussian_filter.sci
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_signal/compute_gaussian_filter.sci
+END
+parrot.png
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/parrot.png
+END
+grad.sci
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/grad.sci
+END
+perform_wavelet_transf.sci
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/perform_wavelet_transf.sci
+END
+div.sci
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/div.sci
+END
+perform_thresholding.sci
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/perform_thresholding.sci
+END
+set_colormap.sci
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/set_colormap.sci
+END
+perform_convolution.m
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_signal/perform_convolution.m
+END
+compute_gaussian_filter.m
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_signal/compute_gaussian_filter.m
+END
+peppers-bw.png
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_signal/peppers-bw.png
+END
+boat.png
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_signal/boat.png
+END
+grad.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/grad.m
+END
+perform_blurring.m
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_signal/perform_blurring.m
+END
+plot_spectrogram.m
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/matlabcompanion/!svn/ver/9/wavelet-tour/toolbox_signal/plot_spectrogram.m
+END
+perform_arith_coding.m
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/perform_arith_coding.m
+END
+set_colormap.m
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/set_colormap.m
+END
+plot_wavelet.sci
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/plot_wavelet.sci
+END
+perform_median_filtering.m
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/perform_median_filtering.m
+END
+compute_total_variation.m
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/compute_total_variation.m
+END
+barb.png
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_signal/barb.png
+END
+plot_sparse_diracs.sci
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/plot_sparse_diracs.sci
+END
+plot_wavelet.m
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/plot_wavelet.m
+END
+perform_homotopy.m
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/matlabcompanion/!svn/ver/10/wavelet-tour/toolbox_signal/perform_homotopy.m
+END
+load_sound.sci
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/load_sound.sci
+END
+perform_stft.m
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/matlabcompanion/!svn/ver/9/wavelet-tour/toolbox_signal/perform_stft.m
+END
+load_signal.m
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_signal/load_signal.m
+END
+parrot-mask.bin
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/parrot-mask.bin
+END
+male.wav
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/male.wav
+END
+perform_arith_fixed.m
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/perform_arith_fixed.m
+END
+psnr.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_signal/psnr.m
+END
+perform_omp.m
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/matlabcompanion/!svn/ver/10/wavelet-tour/toolbox_signal/perform_omp.m
+END
+load_sound.m
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/matlabcompanion/!svn/ver/9/wavelet-tour/toolbox_signal/load_sound.m
+END
+compute_histogram.m
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/compute_histogram.m
+END
+female.wav
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/female.wav
+END
+lena.bin
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_signal/lena.bin
+END
+ifft2.sci
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/ifft2.sci
+END
+perform_blurring.sci
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/perform_blurring.sci
+END
+snr.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_signal/snr.m
+END
+imageplot.sci
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/imageplot.sci
+END
+peform_wiener_filtering.m
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/peform_wiener_filtering.m
+END
+perform_arith_coding.sci
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/perform_arith_coding.sci
+END
+plot_spectrogram.sci
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/plot_spectrogram.sci
+END
+drum.wav
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/drum.wav
+END
+perform_median_filtering.sci
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/perform_median_filtering.sci
+END
+mandrill.bin
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_signal/mandrill.bin
+END
+perform_wavelet_transf.m
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/perform_wavelet_transf.m
+END
+compute_quadrant_selection.m
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/compute_quadrant_selection.m
+END
+imageplot.m
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/imageplot.m
+END
+bird.wav
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/bird.wav
+END
+plot_levelset.m
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/plot_levelset.m
+END
+div.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/div.m
+END
+perform_tv_denoising.m
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/perform_tv_denoising.m
+END
+parrot.bin
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_signal/parrot.bin
+END

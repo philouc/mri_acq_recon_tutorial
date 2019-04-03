@@ -1,0 +1,287 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/matlabcompanion/!svn/ver/11/wavelet-tour/toolbox_general
+END
+randn.sci
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/randn.sci
+END
+crop.sci
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/crop.sci
+END
+axis.sci
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/axis.sci
+END
+cell_add.m
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/matlabcompanion/!svn/ver/11/wavelet-tour/toolbox_general/cell_add.m
+END
+extend_stack_size.sci
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/extend_stack_size.sci
+END
+progressbar.m
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_general/progressbar.m
+END
+rand_discr.sci
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/rand_discr.sci
+END
+set_label.m
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/set_label.m
+END
+strfind.sci
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/strfind.sci
+END
+num2str.sci
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/num2str.sci
+END
+clamp.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_general/clamp.m
+END
+nb_dims.sci
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/nb_dims.sci
+END
+compute_min.sci
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/compute_min.sci
+END
+compute_max.sci
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/compute_max.sci
+END
+crop.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_general/crop.m
+END
+extend_stack_size.m
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/extend_stack_size.m
+END
+rand_discr.m
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/rand_discr.m
+END
+reshape.sci
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/reshape.sci
+END
+nb_dims.m
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_general/nb_dims.m
+END
+std.sci
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/std.sci
+END
+getoptions.sci
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/getoptions.sci
+END
+exist.sci
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/exist.sci
+END
+compute_min.m
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/compute_min.m
+END
+compute_max.m
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/compute_max.m
+END
+isstr.sci
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/isstr.sci
+END
+atan2.sci
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/atan2.sci
+END
+set_graphic_sizes.sci
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/set_graphic_sizes.sci
+END
+strcmp.sci
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/strcmp.sci
+END
+pi.sci
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/pi.sci
+END
+randperm.sci
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/randperm.sci
+END
+getoptions.m
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_general/getoptions.m
+END
+reverse.sci
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/reverse.sci
+END
+rescale.sci
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/rescale.sci
+END
+isfield.sci
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_general/isfield.sci
+END
+mod.sci
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/mod.sci
+END
+isstruct.sci
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/isstruct.sci
+END
+set_rand_seeds.sci
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/set_rand_seeds.sci
+END
+set_graphic_sizes.m
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/set_graphic_sizes.m
+END
+hold.sci
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/hold.sci
+END
+repmat.sci
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/repmat.sci
+END
+lower.sci
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/lower.sci
+END
+reverse.m
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_general/reverse.m
+END
+set_label.sci
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/set_label.sci
+END
+rescale.m
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/matlabcompanion/!svn/ver/7/wavelet-tour/toolbox_general/rescale.m
+END
+clamp.sci
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/clamp.sci
+END
+not.sci
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/not.sci
+END
+set_rand_seeds.m
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/matlabcompanion/!svn/ver/8/wavelet-tour/toolbox_general/set_rand_seeds.m
+END

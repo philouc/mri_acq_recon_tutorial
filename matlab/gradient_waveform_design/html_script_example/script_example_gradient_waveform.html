@@ -1,0 +1,289 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Script example of curve projection</title><meta name="generator" content="MATLAB 8.3"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2014-12-10"><meta name="DC.source" content="script_example_gradient_waveform.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Script example of curve projection</h1><!--introduction--><p>This document shows how to use the algorithm of trajectory projection to design feasible gradient waveforms.</p><p>Run the file 'script_example_gradient_waveform.m'</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Enter the Gradient constraints</a></li><li><a href="#2">Parameters of the scanner (here used in [Lustig et al, IEEE TMI 2008])</a></li><li><a href="#3">Choose an input trajectory for the algorithm</a></li><li><a href="#4">Specify constraints</a></li><li><a href="#5">Project curve with Rotation-Invariant Constraints</a></li><li><a href="#6">Display the output trajectory</a></li><li><a href="#7">Display the gradient</a></li></ul></div><h2>Enter the Gradient constraints<a name="1"></a></h2><pre class="codeinput">close <span class="string">all</span>
+clear <span class="string">all</span>
+clc
+</pre><h2>Parameters of the scanner (here used in [Lustig et al, IEEE TMI 2008])<a name="2"></a></h2><pre class="codeinput">Gmax = 40e-3;  <span class="comment">% T/m</span>
+Smax = 150e-3; <span class="comment">% T/m/ms</span>
+Kmax = 600;     <span class="comment">% m^-1</span>
+
+gamma = 42.576*1e3; <span class="comment">% kHz/T</span>
+
+alpha = gamma*Gmax;  <span class="comment">% in m^-1 ms^-1</span>
+beta  = gamma*Smax;  <span class="comment">% in m^-1 ms^-2</span>
+Dt    = .004;        <span class="comment">% sampling time in ms</span>
+</pre><h2>Choose an input trajectory for the algorithm<a name="3"></a></h2><p>Give an input trajectory</p><pre class="codeinput">load <span class="string">citiesTSPexample</span>
+x=pts*Kmax;
+s0=parameterize_maximum_speed(x,.8*alpha,Dt)';
+
+figure, plot(s0(1:end,1),s0(1:end,2),<span class="string">'b.'</span>,<span class="string">'linewidth'</span>,2)
+axis <span class="string">equal</span>, axis <span class="string">off</span>
+set(gcf,<span class="string">'Color'</span>,[1 1 1])
+legend(<span class="string">'input trajectory'</span>)
+</pre><img vspace="5" hspace="5" src="script_example_gradient_waveform_01.png" alt=""> <h2>Specify constraints<a name="4"></a></h2><pre class="codeinput">dt=Dt;  <span class="comment">% discretisation step;</span>
+
+<span class="comment">% define kinematic constraints</span>
+<span class="comment">%C_kine=set_MRI_constraints_RV(alpha,beta,dt);  % Rotation Variant Constraints</span>
+C_kine=set_MRI_constraints_RIV(alpha,beta,dt); <span class="comment">% Rotation Invariant Constraints</span>
+
+<span class="comment">% and affine constraints</span>
+C_linear=set_Linear_constraints(size(s0,1),size(s0,2));
+<span class="comment">%C_linear=set_Linear_constraints(size(s0,1),size(s0,2),'start_point',[0 0],'end_point',[0 0],'gradient_moment_nulling',1,'curve_splitting',1400);</span>
+
+<span class="comment">% Algorithm parameters</span>
+Algo_param.nit = 30000;  <span class="comment">% number of iterations</span>
+Algo_param.L=16;    <span class="comment">% Lipschitz constant of the gradient</span>
+Algo_param.discretization_step=dt;
+
+<span class="comment">% optional parameters (default 0)</span>
+Algo_param.show_progression = 0; <span class="comment">% 0 = no progression , can be really slow</span>
+Algo_param.display_results  = 1;
+</pre><h2>Project curve with Rotation-Invariant Constraints<a name="5"></a></h2><pre class="codeinput">tic
+s1=Project_Curve_Affine_Constraints(s0,C_kine,C_linear,Algo_param);
+toc
+</pre><pre class="codeoutput">----------------------
+Constraint verifications:
+
+Value of constraint 1: 5.9609   (Bound: 6.8122)
+Value of constraint 2: 0.10596   (Bound: 0.10218)
+----------------------
+----------------------
+Elapsed time is 75.540057 seconds.
+</pre><img vspace="5" hspace="5" src="script_example_gradient_waveform_02.png" alt=""> <h2>Display the output trajectory<a name="6"></a></h2><pre class="codeinput">figure, plot(s0(:,1),s0(:,2),<span class="string">'b'</span>,<span class="string">'linewidth'</span>,2)
+hold <span class="string">on</span>,
+plot(s1(:,1),s1(:,2),<span class="string">'r'</span>,<span class="string">'linewidth'</span>,3)
+axis <span class="string">equal</span>, axis <span class="string">off</span>
+set(gcf,<span class="string">'Color'</span>,[1 1 1])
+legend(<span class="string">'input trajectory'</span>, <span class="string">'projected trajectory'</span>)
+</pre><img vspace="5" hspace="5" src="script_example_gradient_waveform_03.png" alt=""> <h2>Display the gradient<a name="7"></a></h2><pre class="codeinput">g1=Prime(s1,Dt)/gamma;
+gg1=Second(s1,Dt)/gamma;
+T=size(s1,1);
+
+figure,
+plot(g1(:,1),<span class="string">'r'</span>,<span class="string">'linewidth'</span>,3), axis([0 T*1.1 -Gmax*1.1 Gmax*1.1])
+hold <span class="string">on</span>, plot(g1(:,2),<span class="string">'b'</span>,<span class="string">'linewidth'</span>,3), axis([0 T*1.1 -Gmax*1.1 Gmax*1.1])
+g1n=sqrt(g1(:,1).^2+g1(:,2).^2);
+hold <span class="string">on</span>, plot(g1n,<span class="string">'k'</span>,<span class="string">'linewidth'</span>,3), axis([0 T*1.1 -Gmax*1.1 Gmax*1.1])
+set(gcf,<span class="string">'Color'</span>,[1 1 1])
+hold <span class="string">on</span>, plot((1:T),0*(1:T), <span class="string">'--k'</span>,<span class="string">'lineWidth'</span>,3)
+hold <span class="string">on</span>, plot((1:T),0*(1:T)+Gmax, <span class="string">'--k'</span>,<span class="string">'lineWidth'</span>,2)
+hold <span class="string">on</span>, plot((1:T),0*(1:T)-Gmax, <span class="string">'--k'</span>,<span class="string">'lineWidth'</span>,2)
+set(gca,<span class="string">'XTick'</span>,[0,T])
+set(gca,<span class="string">'XTickLabel'</span>,{<span class="string">'0'</span>,T*Dt})
+set(gca,<span class="string">'YTick'</span>,[-Gmax,Gmax])
+set(gca,<span class="string">'YTickLabel'</span>,{-Gmax*1e2,Gmax*1e2})
+set(gca,<span class="string">'FontSize'</span>,15)
+ylabel(<span class="string">'G/cm'</span>)
+xlabel(<span class="string">'ms'</span>)
+hold <span class="string">off</span>
+h_legend=legend(<span class="string">'$ g_x(t)$'</span>,<span class="string">'$ g_y(t)$'</span>,<span class="string">'$|g(t)|$'</span>);
+set(h_legend,<span class="string">'FontSize'</span>,20,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>);
+title(<span class="string">'Gradient Waveforms'</span>)
+
+figure,
+plot(gg1(:,1),<span class="string">'r'</span>,<span class="string">'linewidth'</span>,3), axis([0 T*1.1 -Smax*1.1 Smax*1.1])
+hold <span class="string">on</span>, plot(gg1(:,2),<span class="string">'b'</span>,<span class="string">'linewidth'</span>,3), axis([0 T*1.1 -Smax*1.1 Smax*1.1])
+gg1n=sqrt(gg1(:,1).^2+gg1(:,2).^2);
+hold <span class="string">on</span>, plot(gg1n,<span class="string">'k'</span>,<span class="string">'linewidth'</span>,3), axis([0 T*1.1 -Smax*1.1 Smax*1.1])
+set(gcf,<span class="string">'Color'</span>,[1 1 1])
+hold <span class="string">on</span>, plot((1:T),0*(1:T), <span class="string">'--k'</span>,<span class="string">'lineWidth'</span>,3)
+hold <span class="string">on</span>, plot((1:T),0*(1:T)+Smax, <span class="string">'--k'</span>,<span class="string">'lineWidth'</span>,2)
+hold <span class="string">on</span>, plot((1:T),0*(1:T)-Smax, <span class="string">'--k'</span>,<span class="string">'lineWidth'</span>,2)
+set(gca,<span class="string">'XTick'</span>,[0,T])
+set(gca,<span class="string">'XTickLabel'</span>,{<span class="string">'0'</span>,T*Dt})
+set(gca,<span class="string">'YTick'</span>,[-Smax,Smax])
+set(gca,<span class="string">'YTickLabel'</span>,{-Smax*1e2,Smax*1e2})
+set(gca,<span class="string">'FontSize'</span>,15)
+ylabel(<span class="string">'G/cm/ms'</span>)
+xlabel(<span class="string">'ms'</span>)
+hold <span class="string">off</span>
+h_legend=legend(<span class="string">'$ \dot g_x(t)$'</span>,<span class="string">'$ \dot g_y(t)$'</span>,<span class="string">'$| \dot g(t)|$'</span>);
+set(h_legend,<span class="string">'FontSize'</span>,20,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>);
+title(<span class="string">'Slew rate'</span>)
+</pre><img vspace="5" hspace="5" src="script_example_gradient_waveform_04.png" alt=""> <img vspace="5" hspace="5" src="script_example_gradient_waveform_05.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2014a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Script example of curve projection
+% This document shows how to use the algorithm of trajectory projection to
+% design feasible gradient waveforms.
+% 
+% Run the file 'script_example_gradient_waveform.m'
+
+%% Enter the Gradient constraints
+close all
+clear all
+clc
+%% Parameters of the scanner (here used in [Lustig et al, IEEE TMI 2008])
+Gmax = 40e-3;  % T/m
+Smax = 150e-3; % T/m/ms
+Kmax = 600;     % m^-1   
+
+gamma = 42.576*1e3; % kHz/T
+
+alpha = gamma*Gmax;  % in m^-1 ms^-1
+beta  = gamma*Smax;  % in m^-1 ms^-2
+Dt    = .004;        % sampling time in ms
+
+
+%% Choose an input trajectory for the algorithm
+% Give an input trajectory 
+
+load citiesTSPexample
+x=pts*Kmax;
+s0=parameterize_maximum_speed(x,.8*alpha,Dt)';
+
+figure, plot(s0(1:end,1),s0(1:end,2),'b.','linewidth',2)
+axis equal, axis off
+set(gcf,'Color',[1 1 1])
+legend('input trajectory')
+
+
+%% Specify constraints 
+dt=Dt;  % discretisation step;
+
+% define kinematic constraints
+%C_kine=set_MRI_constraints_RV(alpha,beta,dt);  % Rotation Variant Constraints
+C_kine=set_MRI_constraints_RIV(alpha,beta,dt); % Rotation Invariant Constraints
+
+% and affine constraints
+C_linear=set_Linear_constraints(size(s0,1),size(s0,2));
+%C_linear=set_Linear_constraints(size(s0,1),size(s0,2),'start_point',[0 0],'end_point',[0 0],'gradient_moment_nulling',1,'curve_splitting',1400);
+
+% Algorithm parameters
+Algo_param.nit = 30000;  % number of iterations
+Algo_param.L=16;    % Lipschitz constant of the gradient
+Algo_param.discretization_step=dt;
+
+% optional parameters (default 0)
+Algo_param.show_progression = 0; % 0 = no progression , can be really slow
+Algo_param.display_results  = 1;
+
+
+%% Project curve with Rotation-Invariant Constraints
+tic
+s1=Project_Curve_Affine_Constraints(s0,C_kine,C_linear,Algo_param);
+toc
+
+%% Display the output trajectory
+figure, plot(s0(:,1),s0(:,2),'b','linewidth',2)
+hold on,
+plot(s1(:,1),s1(:,2),'r','linewidth',3)
+axis equal, axis off
+set(gcf,'Color',[1 1 1])
+legend('input trajectory', 'projected trajectory')
+
+%% Display the gradient
+
+g1=Prime(s1,Dt)/gamma;
+gg1=Second(s1,Dt)/gamma;
+T=size(s1,1);
+
+figure,
+plot(g1(:,1),'r','linewidth',3), axis([0 T*1.1 -Gmax*1.1 Gmax*1.1])
+hold on, plot(g1(:,2),'b','linewidth',3), axis([0 T*1.1 -Gmax*1.1 Gmax*1.1])
+g1n=sqrt(g1(:,1).^2+g1(:,2).^2);
+hold on, plot(g1n,'k','linewidth',3), axis([0 T*1.1 -Gmax*1.1 Gmax*1.1])
+set(gcf,'Color',[1 1 1])
+hold on, plot((1:T),0*(1:T), 'REPLACE_WITH_DASH_DASHk','lineWidth',3)
+hold on, plot((1:T),0*(1:T)+Gmax, 'REPLACE_WITH_DASH_DASHk','lineWidth',2)
+hold on, plot((1:T),0*(1:T)-Gmax, 'REPLACE_WITH_DASH_DASHk','lineWidth',2)
+set(gca,'XTick',[0,T])
+set(gca,'XTickLabel',{'0',T*Dt})
+set(gca,'YTick',[-Gmax,Gmax])
+set(gca,'YTickLabel',{-Gmax*1e2,Gmax*1e2})
+set(gca,'FontSize',15)
+ylabel('G/cm')
+xlabel('ms')
+hold off
+h_legend=legend('$ g_x(t)$','$ g_y(t)$','$|g(t)|$');
+set(h_legend,'FontSize',20,'interpreter','latex');
+title('Gradient Waveforms')
+
+figure,
+plot(gg1(:,1),'r','linewidth',3), axis([0 T*1.1 -Smax*1.1 Smax*1.1])
+hold on, plot(gg1(:,2),'b','linewidth',3), axis([0 T*1.1 -Smax*1.1 Smax*1.1])
+gg1n=sqrt(gg1(:,1).^2+gg1(:,2).^2);
+hold on, plot(gg1n,'k','linewidth',3), axis([0 T*1.1 -Smax*1.1 Smax*1.1])
+set(gcf,'Color',[1 1 1])
+hold on, plot((1:T),0*(1:T), 'REPLACE_WITH_DASH_DASHk','lineWidth',3)
+hold on, plot((1:T),0*(1:T)+Smax, 'REPLACE_WITH_DASH_DASHk','lineWidth',2)
+hold on, plot((1:T),0*(1:T)-Smax, 'REPLACE_WITH_DASH_DASHk','lineWidth',2)
+set(gca,'XTick',[0,T])
+set(gca,'XTickLabel',{'0',T*Dt})
+set(gca,'YTick',[-Smax,Smax])
+set(gca,'YTickLabel',{-Smax*1e2,Smax*1e2})
+set(gca,'FontSize',15)
+ylabel('G/cm/ms')
+xlabel('ms')
+hold off
+h_legend=legend('$ \dot g_x(t)$','$ \dot g_y(t)$','$| \dot g(t)|$');
+set(h_legend,'FontSize',20,'interpreter','latex');
+title('Slew rate')
+
+##### SOURCE END #####
+--></body></html>

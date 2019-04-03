@@ -1,0 +1,482 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Gradient waveform design with projection algorithm: the example of Rosette trajectories</title><meta name="generator" content="MATLAB 8.3"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2014-12-10"><meta name="DC.source" content="script_illustration_constraints_Rosette.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Gradient waveform design with projection algorithm: the example of Rosette trajectories</h1><!--introduction--><p>This document shows how to use the algorithm of trajectory projection to design feasible gradient waveforms. It corresponds to Fig. 5 of the paper [Chauffert et al., Gradient Waveform Design for variable density sampling in Magnetic Resonance Imaging]</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Enter the Gradient constraints</a></li><li><a href="#3">Choose an input trajectory for the algorithm</a></li><li><a href="#4">Specify constraints</a></li><li><a href="#5">Project curve with Rotation-Invariant Constraints</a></li><li><a href="#6">Project curve with Rotation-Variant Constraints</a></li><li><a href="#7">Display projected curves</a></li><li><a href="#8">Display gradients for rotation variant constraints</a></li><li><a href="#9">Display gradients for rotation invariant constraints</a></li></ul></div><h2>Enter the Gradient constraints<a name="1"></a></h2><pre class="codeinput">close <span class="string">all</span>
+clear <span class="string">all</span>
+clc
+</pre><p>Parameters of the scanner (here use in [Lustig et al, IEEE TMI 2008])</p><pre class="codeinput">Gmax = 40e-3;  <span class="comment">% T/m</span>
+Smax = 150e-3; <span class="comment">% T/m/ms</span>
+Kmax = 600;     <span class="comment">% m^-1</span>
+
+gamma = 42.576*1e3; <span class="comment">% kHz/T</span>
+
+alpha = gamma*Gmax;  <span class="comment">% in m^-1 ms^-1</span>
+beta  = gamma*Smax;  <span class="comment">% in m^-1 ms^-2</span>
+Dt    = .004;        <span class="comment">% sampling time in ms</span>
+</pre><h2>Choose an input trajectory for the algorithm<a name="3"></a></h2><p>Give an input trajectory</p><pre class="codeinput">w1 = 14.7*2*pi*Gmax;
+w2 = 8.7/1.02*2*pi*Gmax;
+T = .17/Gmax;
+t = 0e-3:Dt:T;
+C = Kmax*sin(w1*t').*exp(1i*w2*t');
+
+x=[real(C)';imag(C)'];
+s0=parameterize_maximum_speed(x,.9*alpha,Dt)';
+sub=1; <span class="comment">% subsampling of the curve for visualization</span>
+figure, plot(s0(1:sub:end,1),s0(1:sub:end,2),<span class="string">'b.'</span>,<span class="string">'linewidth'</span>,2)
+axis <span class="string">equal</span>, axis <span class="string">off</span>
+set(gcf,<span class="string">'Color'</span>,[1 1 1])
+legend(<span class="string">'input trajectory'</span>)
+
+
+Gmx = 4;
+Smx = 15;
+T = 17/Gmx;
+Kmx = 6;
+w1 = 0.147*2*pi*Gmx;
+w2 = 0.087/1.02*2*pi*Gmx;
+t = 0e-3:4e-3:T;
+C = Kmx*sin(w1*t').*exp(1i*w2*t');
+C = [real(C) imag(C) 0*C];
+tic
+[C_riv, time_riv, g_riv, s_riv, k_riv] = minTimeGradient(C,0);          <span class="comment">% Rotationally invariant solution</span>
+toc
+tic
+[C_rv, time_rv, g_rv, s_rv, k_rv]= minTimeGradient(C,1, 0);  <span class="comment">% Rotationally variant solution</span>
+toc
+</pre><pre class="codeoutput">Rotationally Invariant Solution
+Const arc-length parametrization
+Compute geometry dependent constraints
+Solve ODE forward
+Solve ODE backwards
+Final Interpolations
+Done
+Elapsed time is 19.064459 seconds.
+Rotationally Variant Solution
+Const arc-length parametrization
+Compute geometry dependent constraints
+Solve ODE forward
+Solve ODE backwards
+Final Interpolations
+Done
+Elapsed time is 38.514105 seconds.
+</pre><img vspace="5" hspace="5" src="script_illustration_constraints_Rosette_01.png" alt=""> <h2>Specify constraints<a name="4"></a></h2><pre class="codeinput">CRV=set_MRI_constraints_RV(alpha,beta,Dt);
+CRIV=set_MRI_constraints_RIV(alpha,beta,Dt);
+
+<span class="comment">% No additional affine constraint:</span>
+C_linear=set_Linear_constraints(size(s0,1),size(s0,2));
+
+Algo_param.nit = 80000;  <span class="comment">% number of iterations</span>
+Algo_param.L=16;    <span class="comment">% Lipschitz constant of the gradient</span>
+Algo_param.discretization_step=Dt;
+
+<span class="comment">% optional paramteres</span>
+Algo_param.show_progression = 0;
+Algo_param.display_results = 0;
+</pre><h2>Project curve with Rotation-Invariant Constraints<a name="5"></a></h2><pre class="codeinput">tic
+s1=Project_Curve_Affine_Constraints(s0,CRIV,C_linear,Algo_param);
+toc
+<span class="comment">% Compute gradients</span>
+T=size(s1,1);
+t=1:T;
+g1=Prime(s1,Dt)/gamma;
+gg1=Second(s1,Dt)/gamma;
+</pre><pre class="codeoutput">Elapsed time is 73.285348 seconds.
+</pre><h2>Project curve with Rotation-Variant Constraints<a name="6"></a></h2><pre class="codeinput">tic
+s2=Project_Curve_Affine_Constraints(s0,CRV,C_linear,Algo_param);
+toc
+
+<span class="comment">% Compute gradients</span>
+g2=Prime(s2,Dt)/gamma;
+gg2=Second(s2,Dt)/gamma;
+</pre><pre class="codeoutput">Elapsed time is 52.331566 seconds.
+</pre><h2>Display projected curves<a name="7"></a></h2><pre class="codeinput">figure, plot(s0(1:sub:end,1),s0(1:sub:end,2),<span class="string">'--'</span>,<span class="string">'color'</span>,[.5 .5 .5],<span class="string">'linewidth'</span>,3)
+axis <span class="string">equal</span>, axis <span class="string">off</span>
+set(gcf,<span class="string">'Color'</span>,[1 1 1])
+hold <span class="string">on</span>,
+plot(s1(:,1),s1(:,2),<span class="string">'k'</span>,<span class="string">'linewidth'</span>,3)
+axis <span class="string">equal</span>, axis <span class="string">off</span>
+set(gcf,<span class="string">'Color'</span>,[1 1 1])
+hold <span class="string">off</span>
+title(<span class="string">'Projection with RIV constraints'</span>)
+h=legend(<span class="string">'input trajectory'</span>, <span class="string">'projected trajectory'</span>,<span class="string">'location'</span>,<span class="string">'sw'</span>);
+set(h,<span class="string">'FontSize'</span>,20,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>);
+
+figure, plot(s0(1:sub:end,1),s0(1:sub:end,2),<span class="string">'--'</span>,<span class="string">'color'</span>,[.5 .5 .5],<span class="string">'linewidth'</span>,3)
+axis <span class="string">equal</span>, axis <span class="string">off</span>
+set(gcf,<span class="string">'Color'</span>,[1 1 1])
+hold <span class="string">on</span>
+plot(s2(:,1),s2(:,2),<span class="string">'k'</span>,<span class="string">'linewidth'</span>,3)
+axis <span class="string">equal</span>, axis <span class="string">off</span>
+set(gcf,<span class="string">'Color'</span>,[1 1 1])
+hold <span class="string">off</span>
+title(<span class="string">'Projection with RV constraints'</span>)
+h=legend(<span class="string">'input trajectory'</span>, <span class="string">'projected trajectory'</span>,<span class="string">'location'</span>,<span class="string">'sw'</span>);
+set(h,<span class="string">'FontSize'</span>,20,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>);
+</pre><img vspace="5" hspace="5" src="script_illustration_constraints_Rosette_02.png" alt=""> <img vspace="5" hspace="5" src="script_illustration_constraints_Rosette_03.png" alt=""> <h2>Display gradients for rotation variant constraints<a name="8"></a></h2><pre class="codeinput">T_rv=1.1*time_rv/Dt;
+t_rv=1:T_rv;
+figure
+plot(g_rv(:,1)*1e-2,<span class="string">'r'</span>,<span class="string">'linewidth'</span>,3), axis([0 T_rv -Gmax*1.1 Gmax*1.1])
+hold <span class="string">on</span>, plot(g_rv(:,2)*1e-2,<span class="string">'b'</span>,<span class="string">'linewidth'</span>,3), axis([0 T_rv -Gmax*1.1 Gmax*1.1])
+set(gcf,<span class="string">'Color'</span>,[1 1 1])
+hold <span class="string">on</span>, plot(t_rv,0*t_rv, <span class="string">'--k'</span>,<span class="string">'lineWidth'</span>,3)
+hold <span class="string">on</span>, plot(t_rv,0*t_rv+Gmax, <span class="string">'--k'</span>,<span class="string">'lineWidth'</span>,2)
+hold <span class="string">on</span>, plot(t_rv,0*t_rv-Gmax, <span class="string">'--k'</span>,<span class="string">'lineWidth'</span>,2)
+set(gca,<span class="string">'XTick'</span>,[0,T_rv/1.1])
+set(gca,<span class="string">'XTickLabel'</span>,{<span class="string">'0'</span>,time_rv})
+set(gca,<span class="string">'YTick'</span>,[-Gmax,Gmax])
+set(gca,<span class="string">'YTickLabel'</span>,{-Gmax*1e2,Gmax*1e2})
+set(gca,<span class="string">'FontSize'</span>,15)
+ylabel(<span class="string">'G/cm'</span>)
+xlabel(<span class="string">'ms'</span>)
+hold <span class="string">off</span>
+h_legend=legend(<span class="string">'$ g_x(t)$'</span>,<span class="string">'$ g_y(t)$'</span>);
+set(h_legend,<span class="string">'FontSize'</span>,20,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>);
+title(<span class="string">'reparameterization'</span>)
+
+<span class="comment">% display gradients</span>
+figure,
+plot(g2(:,1),<span class="string">'r'</span>,<span class="string">'linewidth'</span>,3), axis([0 T_rv -Gmax*1.1 Gmax*1.1])
+hold <span class="string">on</span>, plot(g2(:,2),<span class="string">'b'</span>,<span class="string">'linewidth'</span>,3), axis([0 T_rv -Gmax*1.1 Gmax*1.1])
+set(gcf,<span class="string">'Color'</span>,[1 1 1])
+hold <span class="string">on</span>, plot(t_rv,0*t_rv, <span class="string">'--k'</span>,<span class="string">'lineWidth'</span>,3)
+hold <span class="string">on</span>, plot(t_rv,0*t_rv+Gmax, <span class="string">'--k'</span>,<span class="string">'lineWidth'</span>,2)
+hold <span class="string">on</span>, plot(t_rv,0*t_rv-Gmax, <span class="string">'--k'</span>,<span class="string">'lineWidth'</span>,2)
+set(gca,<span class="string">'XTick'</span>,[0,T])
+set(gca,<span class="string">'XTickLabel'</span>,{<span class="string">'0'</span>,T*Dt})
+set(gca,<span class="string">'YTick'</span>,[-Gmax,Gmax])
+set(gca,<span class="string">'YTickLabel'</span>,{-Gmax*1e2,Gmax*1e2})
+set(gca,<span class="string">'FontSize'</span>,15)
+ylabel(<span class="string">'G/cm'</span>)
+xlabel(<span class="string">'ms'</span>)
+hold <span class="string">off</span>
+h_legend=legend(<span class="string">'$ g_x(t)$'</span>,<span class="string">'$ g_y(t)$'</span>);
+set(h_legend,<span class="string">'FontSize'</span>,20,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>);
+title(<span class="string">'projection'</span>)
+</pre><img vspace="5" hspace="5" src="script_illustration_constraints_Rosette_04.png" alt=""> <img vspace="5" hspace="5" src="script_illustration_constraints_Rosette_05.png" alt=""> <h2>Display gradients for rotation invariant constraints<a name="9"></a></h2><pre class="codeinput">T_riv=1.1*time_riv/Dt;
+t_riv=1:T_riv;
+figure, plot(g_riv(:,1)*1e-2,<span class="string">'r'</span>,<span class="string">'linewidth'</span>,3), axis([0 T_riv -Gmax*1.1 Gmax*1.1])
+hold <span class="string">on</span>, plot(g_riv(:,2)*1e-2,<span class="string">'b'</span>,<span class="string">'linewidth'</span>,3), axis([0 T_riv -Gmax*1.1 Gmax*1.1])
+g2n=sqrt(g_riv(:,1).^2+g_riv(:,2).^2)*1e-2;
+hold <span class="string">on</span>, plot(g2n,<span class="string">'k'</span>,<span class="string">'linewidth'</span>,3), axis([0 T_riv -Gmax*1.1 Gmax*1.1])
+set(gcf,<span class="string">'Color'</span>,[1 1 1])
+hold <span class="string">on</span>, plot(t_riv,0*t_riv, <span class="string">'--k'</span>,<span class="string">'lineWidth'</span>,3)
+hold <span class="string">on</span>, plot(t_riv,0*t_riv+Gmax, <span class="string">'--k'</span>,<span class="string">'lineWidth'</span>,2)
+hold <span class="string">on</span>, plot(t_riv,0*t_riv-Gmax, <span class="string">'--k'</span>,<span class="string">'lineWidth'</span>,2)
+set(gca,<span class="string">'XTick'</span>,[0,T_riv/1.1])
+set(gca,<span class="string">'XTickLabel'</span>,{<span class="string">'0'</span>,time_riv})
+set(gca,<span class="string">'YTick'</span>,[-Gmax,Gmax])
+set(gca,<span class="string">'YTickLabel'</span>,{-Gmax*1e2,Gmax*1e2})
+set(gca,<span class="string">'FontSize'</span>,15)
+ylabel(<span class="string">'G/cm'</span>)
+xlabel(<span class="string">'ms'</span>)
+hold <span class="string">off</span>
+h_legend=legend(<span class="string">'$ g_x(t)$'</span>,<span class="string">'$ g_y(t)$'</span>);
+set(h_legend,<span class="string">'FontSize'</span>,20,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>);
+title(<span class="string">'reparameterization'</span>)
+
+<span class="comment">% display gradients</span>
+figure, plot(g1(:,1),<span class="string">'r'</span>,<span class="string">'linewidth'</span>,3), axis([0 T_riv -Gmax*1.1 Gmax*1.1])
+hold <span class="string">on</span>, plot(g1(:,2),<span class="string">'b'</span>,<span class="string">'linewidth'</span>,3), axis([0 T_riv -Gmax*1.1 Gmax*1.1])
+g1n=sqrt(g1(:,1).^2+g1(:,2).^2);
+hold <span class="string">on</span>, plot(g1n,<span class="string">'k'</span>,<span class="string">'linewidth'</span>,3), axis([0 T_riv -Gmax*1.1 Gmax*1.1])
+set(gcf,<span class="string">'Color'</span>,[1 1 1])
+hold <span class="string">on</span>, plot(t_riv,0*t_riv, <span class="string">'--k'</span>,<span class="string">'lineWidth'</span>,3)
+hold <span class="string">on</span>, plot(t_riv,0*t_riv+Gmax, <span class="string">'--k'</span>,<span class="string">'lineWidth'</span>,2)
+hold <span class="string">on</span>, plot(t_riv,0*t_riv-Gmax, <span class="string">'--k'</span>,<span class="string">'lineWidth'</span>,2)
+set(gca,<span class="string">'XTick'</span>,[0,T])
+set(gca,<span class="string">'XTickLabel'</span>,{<span class="string">'0'</span>,T*Dt})
+set(gca,<span class="string">'YTick'</span>,[-Gmax,Gmax])
+set(gca,<span class="string">'YTickLabel'</span>,{-Gmax*1e2,Gmax*1e2})
+set(gca,<span class="string">'FontSize'</span>,15)
+ylabel(<span class="string">'G/cm'</span>)
+xlabel(<span class="string">'ms'</span>)
+hold <span class="string">off</span>
+h_legend=legend(<span class="string">'$ g_x(t)$'</span>,<span class="string">'$ g_y(t)$'</span>);
+set(h_legend,<span class="string">'FontSize'</span>,20,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>);
+title(<span class="string">'reparameterization'</span>)
+</pre><img vspace="5" hspace="5" src="script_illustration_constraints_Rosette_06.png" alt=""> <img vspace="5" hspace="5" src="script_illustration_constraints_Rosette_07.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2014a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Gradient waveform design with projection algorithm: the example of Rosette trajectories
+% This document shows how to use the algorithm of trajectory projection to
+% design feasible gradient waveforms. It corresponds to Fig. 5 of the paper
+% [Chauffert et al., Gradient Waveform Design for variable density sampling
+% in Magnetic Resonance Imaging]
+
+%% Enter the Gradient constraints
+close all
+clear all
+clc
+%%
+% Parameters of the scanner (here use in [Lustig et al, IEEE TMI 2008])
+Gmax = 40e-3;  % T/m
+Smax = 150e-3; % T/m/ms
+Kmax = 600;     % m^-1   
+
+gamma = 42.576*1e3; % kHz/T
+
+alpha = gamma*Gmax;  % in m^-1 ms^-1
+beta  = gamma*Smax;  % in m^-1 ms^-2
+Dt    = .004;        % sampling time in ms
+
+
+%% Choose an input trajectory for the algorithm
+% Give an input trajectory 
+
+w1 = 14.7*2*pi*Gmax;
+w2 = 8.7/1.02*2*pi*Gmax;
+T = .17/Gmax;
+t = 0e-3:Dt:T;
+C = Kmax*sin(w1*t').*exp(1i*w2*t');
+
+x=[real(C)';imag(C)'];
+s0=parameterize_maximum_speed(x,.9*alpha,Dt)';
+sub=1; % subsampling of the curve for visualization
+figure, plot(s0(1:sub:end,1),s0(1:sub:end,2),'b.','linewidth',2)
+axis equal, axis off
+set(gcf,'Color',[1 1 1])
+legend('input trajectory')
+
+
+Gmx = 4;
+Smx = 15;
+T = 17/Gmx;
+Kmx = 6;
+w1 = 0.147*2*pi*Gmx;
+w2 = 0.087/1.02*2*pi*Gmx;
+t = 0e-3:4e-3:T;
+C = Kmx*sin(w1*t').*exp(1i*w2*t');
+C = [real(C) imag(C) 0*C];
+tic
+[C_riv, time_riv, g_riv, s_riv, k_riv] = minTimeGradient(C,0);          % Rotationally invariant solution
+toc
+tic
+[C_rv, time_rv, g_rv, s_rv, k_rv]= minTimeGradient(C,1, 0);  % Rotationally variant solution
+toc
+
+%% Specify constraints 
+
+CRV=set_MRI_constraints_RV(alpha,beta,Dt);
+CRIV=set_MRI_constraints_RIV(alpha,beta,Dt);
+
+% No additional affine constraint:
+C_linear=set_Linear_constraints(size(s0,1),size(s0,2));
+
+Algo_param.nit = 80000;  % number of iterations
+Algo_param.L=16;    % Lipschitz constant of the gradient
+Algo_param.discretization_step=Dt;
+
+% optional paramteres
+Algo_param.show_progression = 0; 
+Algo_param.display_results = 0;
+
+%% Project curve with Rotation-Invariant Constraints
+tic
+s1=Project_Curve_Affine_Constraints(s0,CRIV,C_linear,Algo_param);
+toc
+% Compute gradients
+T=size(s1,1);
+t=1:T;
+g1=Prime(s1,Dt)/gamma;
+gg1=Second(s1,Dt)/gamma;
+
+
+
+
+%% Project curve with Rotation-Variant Constraints
+
+tic
+s2=Project_Curve_Affine_Constraints(s0,CRV,C_linear,Algo_param);
+toc
+
+% Compute gradients
+g2=Prime(s2,Dt)/gamma;
+gg2=Second(s2,Dt)/gamma;
+
+
+%% Display projected curves
+
+figure, plot(s0(1:sub:end,1),s0(1:sub:end,2),'REPLACE_WITH_DASH_DASH','color',[.5 .5 .5],'linewidth',3)
+axis equal, axis off
+set(gcf,'Color',[1 1 1])
+hold on,
+plot(s1(:,1),s1(:,2),'k','linewidth',3)
+axis equal, axis off
+set(gcf,'Color',[1 1 1])
+hold off
+title('Projection with RIV constraints')
+h=legend('input trajectory', 'projected trajectory','location','sw');
+set(h,'FontSize',20,'interpreter','latex');
+
+figure, plot(s0(1:sub:end,1),s0(1:sub:end,2),'REPLACE_WITH_DASH_DASH','color',[.5 .5 .5],'linewidth',3)
+axis equal, axis off
+set(gcf,'Color',[1 1 1])
+hold on
+plot(s2(:,1),s2(:,2),'k','linewidth',3)
+axis equal, axis off
+set(gcf,'Color',[1 1 1])
+hold off
+title('Projection with RV constraints')
+h=legend('input trajectory', 'projected trajectory','location','sw');
+set(h,'FontSize',20,'interpreter','latex');
+
+%% Display gradients for rotation variant constraints
+
+T_rv=1.1*time_rv/Dt;
+t_rv=1:T_rv;
+figure
+plot(g_rv(:,1)*1e-2,'r','linewidth',3), axis([0 T_rv -Gmax*1.1 Gmax*1.1])
+hold on, plot(g_rv(:,2)*1e-2,'b','linewidth',3), axis([0 T_rv -Gmax*1.1 Gmax*1.1])
+set(gcf,'Color',[1 1 1])
+hold on, plot(t_rv,0*t_rv, 'REPLACE_WITH_DASH_DASHk','lineWidth',3)
+hold on, plot(t_rv,0*t_rv+Gmax, 'REPLACE_WITH_DASH_DASHk','lineWidth',2)
+hold on, plot(t_rv,0*t_rv-Gmax, 'REPLACE_WITH_DASH_DASHk','lineWidth',2)
+set(gca,'XTick',[0,T_rv/1.1])
+set(gca,'XTickLabel',{'0',time_rv})
+set(gca,'YTick',[-Gmax,Gmax])
+set(gca,'YTickLabel',{-Gmax*1e2,Gmax*1e2})
+set(gca,'FontSize',15)
+ylabel('G/cm')
+xlabel('ms')
+hold off
+h_legend=legend('$ g_x(t)$','$ g_y(t)$');
+set(h_legend,'FontSize',20,'interpreter','latex');
+title('reparameterization')
+
+% display gradients
+figure,
+plot(g2(:,1),'r','linewidth',3), axis([0 T_rv -Gmax*1.1 Gmax*1.1])
+hold on, plot(g2(:,2),'b','linewidth',3), axis([0 T_rv -Gmax*1.1 Gmax*1.1])
+set(gcf,'Color',[1 1 1])
+hold on, plot(t_rv,0*t_rv, 'REPLACE_WITH_DASH_DASHk','lineWidth',3)
+hold on, plot(t_rv,0*t_rv+Gmax, 'REPLACE_WITH_DASH_DASHk','lineWidth',2)
+hold on, plot(t_rv,0*t_rv-Gmax, 'REPLACE_WITH_DASH_DASHk','lineWidth',2)
+set(gca,'XTick',[0,T])
+set(gca,'XTickLabel',{'0',T*Dt})
+set(gca,'YTick',[-Gmax,Gmax])
+set(gca,'YTickLabel',{-Gmax*1e2,Gmax*1e2})
+set(gca,'FontSize',15)
+ylabel('G/cm')
+xlabel('ms')
+hold off
+h_legend=legend('$ g_x(t)$','$ g_y(t)$');
+set(h_legend,'FontSize',20,'interpreter','latex');
+title('projection')
+
+
+%% Display gradients for rotation invariant constraints
+
+T_riv=1.1*time_riv/Dt;
+t_riv=1:T_riv;
+figure, plot(g_riv(:,1)*1e-2,'r','linewidth',3), axis([0 T_riv -Gmax*1.1 Gmax*1.1])
+hold on, plot(g_riv(:,2)*1e-2,'b','linewidth',3), axis([0 T_riv -Gmax*1.1 Gmax*1.1])
+g2n=sqrt(g_riv(:,1).^2+g_riv(:,2).^2)*1e-2;
+hold on, plot(g2n,'k','linewidth',3), axis([0 T_riv -Gmax*1.1 Gmax*1.1])
+set(gcf,'Color',[1 1 1])
+hold on, plot(t_riv,0*t_riv, 'REPLACE_WITH_DASH_DASHk','lineWidth',3)
+hold on, plot(t_riv,0*t_riv+Gmax, 'REPLACE_WITH_DASH_DASHk','lineWidth',2)
+hold on, plot(t_riv,0*t_riv-Gmax, 'REPLACE_WITH_DASH_DASHk','lineWidth',2)
+set(gca,'XTick',[0,T_riv/1.1])
+set(gca,'XTickLabel',{'0',time_riv})
+set(gca,'YTick',[-Gmax,Gmax])
+set(gca,'YTickLabel',{-Gmax*1e2,Gmax*1e2})
+set(gca,'FontSize',15)
+ylabel('G/cm')
+xlabel('ms')
+hold off
+h_legend=legend('$ g_x(t)$','$ g_y(t)$');
+set(h_legend,'FontSize',20,'interpreter','latex');
+title('reparameterization')
+
+% display gradients
+figure, plot(g1(:,1),'r','linewidth',3), axis([0 T_riv -Gmax*1.1 Gmax*1.1])
+hold on, plot(g1(:,2),'b','linewidth',3), axis([0 T_riv -Gmax*1.1 Gmax*1.1])
+g1n=sqrt(g1(:,1).^2+g1(:,2).^2);
+hold on, plot(g1n,'k','linewidth',3), axis([0 T_riv -Gmax*1.1 Gmax*1.1])
+set(gcf,'Color',[1 1 1])
+hold on, plot(t_riv,0*t_riv, 'REPLACE_WITH_DASH_DASHk','lineWidth',3)
+hold on, plot(t_riv,0*t_riv+Gmax, 'REPLACE_WITH_DASH_DASHk','lineWidth',2)
+hold on, plot(t_riv,0*t_riv-Gmax, 'REPLACE_WITH_DASH_DASHk','lineWidth',2)
+set(gca,'XTick',[0,T])
+set(gca,'XTickLabel',{'0',T*Dt})
+set(gca,'YTick',[-Gmax,Gmax])
+set(gca,'YTickLabel',{-Gmax*1e2,Gmax*1e2})
+set(gca,'FontSize',15)
+ylabel('G/cm')
+xlabel('ms')
+hold off
+h_legend=legend('$ g_x(t)$','$ g_y(t)$');
+set(h_legend,'FontSize',20,'interpreter','latex');
+title('reparameterization')
+
+
+
+
+
+
+##### SOURCE END #####
+--></body></html>

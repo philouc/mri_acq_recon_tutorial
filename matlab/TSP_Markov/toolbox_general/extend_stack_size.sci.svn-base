@@ -1,0 +1,15 @@
+function extend_stack_size(mu)
+
+// extend_stack_size - extend memory
+//
+//  extend_stack_size(mult);
+//
+//  Copyright (c) 2008 Gabriel Peyre
+
+if argn(2)<1
+    mu = 4;
+end
+a = stacksize();
+stacksize(mu*a(1));
+
+endfunction

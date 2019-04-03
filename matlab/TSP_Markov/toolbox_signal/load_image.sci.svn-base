@@ -1,0 +1,33 @@
+function M = load_image(name, n0, options)
+
+// read an image from a file
+
+if argn(2)<2
+	n0 = [];
+end
+
+options.null = 0;
+rep = getoptions(options, 'image_rep', './toolbox_signal/');
+
+filename = strcat([rep name '.bin']);
+fid = mopen(filename, 'rb');
+if fid<0
+    error('Problem with file loading.');
+end
+n = mget(1, 'us', fid);
+p = mget(1, 'us', fid);
+M = mget(n*p, 'uc', fid);
+mclose(fid);
+if length(M)~=n*p
+    error('Problem with file loading.');
+end
+M = matrix(M, n, p);
+
+
+if not(isempty(n0)) & (n0~=size(M, 1) | n0~=size(M, 2)) & argn(2)>=2
+	M = image_resize(M,n0);
+end
+
+
+
+endfunction
