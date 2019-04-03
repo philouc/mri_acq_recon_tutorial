@@ -1,5 +1,9 @@
 # isbi19-tutorial
-Code for ISBI'19 Tutorial 
+
+* slides*
+Slides area available in pdf format in the slides folder. 
+
+*Code for ISBI'19 Tutorial*
 
 This repository contains code and slides that are dedicated to reproduce part of the examples presented at ISBI'19 in Venice during the tutorial entitled: "Recent advances in acquisition and reconstruction for Compressed Sensing MRI". The code focuses on basics and recent advances in MR acquisition or design of k-space sampling schemes.  
 All aspects related to MRI reconstruction in this tutorial will be teached by [Prof. Jeff Fessler](https://github.com/JeffFessler/MIRT.jl) with code and examples in [Julia](https://julialang.org/) language.
