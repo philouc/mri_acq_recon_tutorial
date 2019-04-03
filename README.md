@@ -11,7 +11,7 @@ Slides area available in pdf format in the [slides](https://github.com/philouc/i
 
 ### Test data
 
-Some 2D MR synthetic images are available for testing at various image resolution (ie fixed FOV= 256mm and pixel size varying from 1mm down to 125 µm as in plane resolution). Matrix size thus varies from 256x256 up to 2048x2048. Each filename is called BrainPhantomXXX[X].png with XXX referring to the image dimension (e.g., 256). A single 2D MRI image collected at 7 Tesla is also available.  
+Some 2D MR synthetic images are available for testing at various image resolution (ie fixed FOV= 256mm and pixel size varying from 1mm down to 125 µm as in plane resolution). Matrix size thus varies from 256x256 up to 2048x2048. Each filename is called **BrainPhantomXXX[X].png** with _XXX_ referring to the image dimension (e.g., 256). A single 2D MRI image collected at 7 Tesla is also available.  
 
 ### Matlab
 
