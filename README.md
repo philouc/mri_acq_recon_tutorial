@@ -11,7 +11,7 @@ Slides area available in pdf format in the [slides](https://github.com/philouc/i
 
 ### Test data
 
-Some 2D MR synthetic images are available for testing at various image resolution (ie fixed FOV= 256mm and pixel size varying from 1mm down to 125 µm as in plane resolution). Matrix size thus varies from 256x256 up to 2048x2048. Each filename is called **BrainPhantomXXX[X].png** with _XXX_ referring to the image dimension (e.g., 256). A single 2D MRI image collected at 7 Tesla is also available. We also provide some SPARKLING trajectories for illustration purposes for two different image sizes (256x256 and 512x512).
+Some 2D MR synthetic images are available for testing at various image resolution (ie fixed FOV= 256mm and pixel size varying from 1mm down to 125 µm as in plane resolution). Matrix size thus varies from 256x256 up to 2048x2048. Each filename is called **BrainPhantomXXX[X].png** with _XXX_ referring to the image dimension (e.g., 256). A single 2D MRI image collected at 7 Tesla is also available. We also provide some SPARKLING (_Spreading Projection Algorithm for Rapid K-space sampLING_) trajectories for illustration purposes for two different image sizes (256x256 and 512x512). 
 
 ### Matlab
 
@@ -19,7 +19,7 @@ Here, The repository gathers original Matlab code developed by my former PhD stu
 
 ### Python
 
-As we're moving to Python language, I and my student Nicolas Chartier started to recode the basics for MRI sampling in python. You can find some ipython Notebooks in the [Python](https://github.com/philouc/isbi19-tutorial/tree/master/python) folder. Note that we illustrate both Cartesian and non-Cartesian sampling, regular and irregular undersampling. Irregular undersampling can be produced using either pseudo-random generation or incoherent optimization-driven sampling like SPARKLING.
+As we're moving to Python language, I and my student Nicolas Chartier started to recode the basics for MRI sampling in python. You can find some ipython Notebooks in the [Python](https://github.com/philouc/isbi19-tutorial/tree/master/python) folder. Note that we illustrate both Cartesian and non-Cartesian sampling, regular and irregular undersampling. Irregular undersampling can be produced using either pseudo-random generation or incoherent optimization-driven sampling like SPARKLING. The code of the latter approach, designed by Carole Lazarus, Nicolas Chauffert and Pierre Weiss, is actually not disclosed.
 
 Importantly, we also develop our own image reconstruction python package for multiple Fourier imaging modalities, namely [PySAP](https://github.com/CEA-COSMIC/pysap) and its dedicated plugin for MR image: [pysap-mri](https://github.com/CEA-COSMIC/pysap-mri). The main contributors to this plugin are [Loubna El Gueddari](https://github.com/LElgueddari) and [Zaccharie Ramzi](https://github.com/zaccharieramzi), two PhD candidates under my supervision at [CEA/NeuroSpin](http://joliot.cea.fr/drf/joliot/en/Pages/research_entities/NeuroSpin.aspx). These developments are done in collaboration with the [CosmoStat](https://cosmostat.org) team in the context of the [COSMIC](https://cosmic.cosmostat.org) project.
 
