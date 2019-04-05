@@ -29,4 +29,6 @@ To install PySAP properly, you must first install pyNFFT in the following way (o
 * pip install cython numpy
 * pip install git+https://github.com/pyNFFT/pyNFFT.git
 
-Then go [here](https://github.com/CEA-COSMIC/pysap) to check PySAP's package dependencies.
+Then go [here](https://github.com/CEA-COSMIC/pysap) to check PySAP's package dependencies before running:
+* pip install --user python-pySAP
+
