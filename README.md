@@ -15,7 +15,7 @@ Some 2D MR synthetic images are available for testing at various image resolutio
 
 ### Matlab
 
-Here, The repository gathers original Matlab code developed by my former PhD student, Nicolas Chauffert in tight collaboration with [Pierre Weiss](https://www.math.univ-toulouse.fr/~weiss/) and located in the [matlab](https://github.com/philouc/isbi19-tutorial/tree/master/matlab) folder.
+Here, The repository gathers original Matlab code developed by my former PhD student, Nicolas Chauffert in tight collaboration with [Pierre Weiss](https://www.math.univ-toulouse.fr/~weiss/) and located in the [matlab](https://github.com/philouc/isbi19-tutorial/tree/master/matlab) folder. It is useful to reprduce the figures based on TSP-sampling (Travelling Salesman Problem), Markov chain sampling and illustrate the projection algorithm onto the hardware constraints imposed on the magnetic field gradients.
 
 ### Python
 
