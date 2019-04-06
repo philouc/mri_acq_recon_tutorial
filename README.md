@@ -22,13 +22,23 @@ Here, The repository gathers original Matlab code developed by my former PhD stu
 As we're moving to Python language, I and my student Nicolas Chartier started to recode the basics for MRI sampling in python. You can find some ipython Notebooks in the [Python](https://github.com/philouc/isbi19-tutorial/tree/master/python) folder. Note that we illustrate both Cartesian and non-Cartesian sampling, regular and irregular undersampling. Irregular undersampling can be produced using either pseudo-random generation or incoherent optimization-driven sampling like SPARKLING. The code of the latter approach, designed by [Carole Lazarus](https://www.linkedin.com/in/carole-lazarus-b44907a6/?originalSubdomain=fr), [Nicolas Chauffert](http://chauffertn.free.fr/) and [Pierre Weiss](https://www.math.univ-toulouse.fr/~weiss/), is actually not disclosed.
 
 Importantly, we also develop our own image reconstruction python package for multiple Fourier imaging modalities, namely [PySAP](https://github.com/CEA-COSMIC/pysap) and its dedicated plugin for MR image: [pysap-mri](https://github.com/CEA-COSMIC/pysap-mri). The main contributors to this plugin are [Loubna El Gueddari](https://github.com/LElgueddari) and [Zaccharie Ramzi](https://github.com/zaccharieramzi), two PhD candidates under my supervision at [CEA/NeuroSpin](http://joliot.cea.fr/drf/joliot/en/Pages/research_entities/NeuroSpin.aspx). These developments are done in collaboration with the [CosmoStat](https://cosmostat.org) team in the context of the [COSMIC](https://cosmic.cosmostat.org) project.
-To install PySAP properly, you must first install pyNFFT in the following way (on Linux):
+To reproduce the last block of the 7th notebook, you must first install pyNFFT in the following way (on Linux):
 
 * sudo apt install -y libnfft3-dev 
 * export CPLUS_INCLUDE_PATH=/usr/include/python3.5; 
-* pip install cython numpy
-* pip install git+https://github.com/pyNFFT/pyNFFT.git
 
-Then go [here](https://github.com/CEA-COSMIC/pysap) to check PySAP's package dependencies before running:
-* pip install --user python-pySAP
+Then, if you use Python3.x (x=5,6,7) ans asuming pip3 is installed on your system, run:
+* pip3 install cython numpy
+* pip3 install git+https://github.com/pyNFFT/pyNFFT.git
 
+Then go [here](https://github.com/CEA-COSMIC/pysap) to check PySAP's package dependencies (including PyQt4).
+Run: 
+* sudo apt install cmake to compile the C++ dependencies
+
+Last, install the following branch of PySAP (old system with embedded plug-ins):
+* pip3 install git+https://github.com/zaccharieramzi/pysap.git@pogm_addition
+
+Note that the brand new release of PySAP has a new organization with separate plug-ins for MRI, astrophyics, tomography, etc.
+You will get it if you run:
+
+* pip3 install --user python-pySAP
