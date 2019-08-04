@@ -37,7 +37,7 @@ Run:
 * sudo apt install cmake to compile the C++ dependencies
 
 Last, install the following branch of PySAP (old system with embedded plug-ins):
-* pip3 install git+https://github.com/zaccharieramzi/pysap.git@pogm_addition
+* pip3 install git+https://github.com/zaccharieramzi/pysap/tree/pogm_addition
 
 Note that the brand new release of PySAP has a new organization with separate plug-ins for MRI, astrophyics, tomography, etc.
 You will get it if you run:
