@@ -23,6 +23,7 @@ As we're moving to Python language, I and my student Nicolas Chartier started to
 
 Importantly, we also develop our own image reconstruction python package for multiple _Fourier imaging_ modalities, namely [PySAP](https://github.com/CEA-COSMIC/pysap). These developments are done in collaboration with the [CosmoStat](https://cosmostat.org) team ([J. L. Starck](http://jstarck.cosmostat.org/) in the context of the [COSMIC](https://cosmic.cosmostat.org) project. The two core developers of [PySAP](https://github.com/CEA-COSMIC/pysap) are A. Grigis (antoine.grigis@cea.fr) and [S. Farrens](http://www.cosmostat.org/people/sfarrens). The new organization of [PySAP](https://github.com/CEA-COSMIC/pysap) relies on on separate plugin for each imaging modality, for instance for MRI: [pysap-mri](https://github.com/CEA-COSMIC/pysap-mri). The main contributors to this plugin are [Loubna El Gueddari](https://github.com/LElgueddari) and [Zaccharie Ramzi](https://github.com/zaccharieramzi), two PhD candidates under my supervision at [CEA/NeuroSpin](http://joliot.cea.fr/drf/joliot/en/Pages/research_entities/NeuroSpin.aspx). 
 
+
 To reproduce the last block of the 7th notebook, you must first install pyNFFT in the following way (on Linux):
 
 * sudo apt install -y libnfft3-dev 
@@ -43,3 +44,5 @@ Note that the brand new release of PySAP has a new organization with separate pl
 You will get it if you run:
 
 * pip3 install --user python-pySAP
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/philouc/isbi19-tutorial/master)
