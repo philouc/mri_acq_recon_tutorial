@@ -1,3 +1,5 @@
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/philouc/isbi19-tutorial/master)
+
 # Isbi19-tutorial
 
 This repository contains code and slides that are dedicated to reproduce part of the examples presented at ISBI'19 in Venice during the tutorial entitled: "Recent advances in acquisition and reconstruction for Compressed Sensing MRI". The code focuses on basics and recent advances in MR acquisition or design of k-space sampling schemes.  
@@ -44,5 +46,3 @@ Note that the brand new release of PySAP has a new organization with separate pl
 You will get it if you run:
 
 * pip3 install --user python-pySAP
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/philouc/isbi19-tutorial/master)
