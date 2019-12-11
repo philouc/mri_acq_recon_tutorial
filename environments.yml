@@ -3,25 +3,4 @@ channels:
   - anaconda
   - defaults
 dependencies:
-  - cmake=3.14.0=h52cb24c_0
-  - pip:
-    - astropy==2.0.8
-    - matplotlib==3.1.1
-    - modopt==1.4.1
-    - nibabel==2.4.1
-    - numpy==1.17.3
-    - pip==19.3.1
-    - pipreqs==0.4.9
-    - progressbar2==3.42.0
-    - pybind11==2.3.0
-    - pynfft==1.3.2
-    - pynufft==2019.2.0
-    - pyqt5==5.13.0
-    - pyqt5-sip==4.19.18
-    - pyqtgraph==0.10.0
-    - pytest-runner==5.2
-    - python-utils==2.3.0
-    - retrying==1.3.3
-    - scikit-image==0.16.1
-    - python-pysap
-    - pysap-mri
+  - cmake
