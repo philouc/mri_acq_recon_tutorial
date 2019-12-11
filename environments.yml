@@ -1,6 +1,0 @@
-name: base
-channels:
-  - anaconda
-  - defaults
-dependencies:
-  - cmake
