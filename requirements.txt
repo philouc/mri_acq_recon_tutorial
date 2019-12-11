@@ -1,5 +1,5 @@
 python-pysap
 scikit-image
-git+git://https://github.com/jyhmiinlin/pynufft@master#egg=pynufft
+git+git://github.com/jyhmiinlin/pynufft@master#egg=pynufft
 cython
 pynfft
