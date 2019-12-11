@@ -1,0 +1,5 @@
+numpy==1.16.*
+matplotlib==3.*
+scikit-image
+python-pysap
+pysap-mri
