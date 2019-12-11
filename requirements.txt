@@ -2,4 +2,5 @@ python-pysap
 scikit-image
 git+git://github.com/jyhmiinlin/pynufft@master#egg=pynufft
 cython
-git+git://github.com/cea-cosmic/pysap-mri@master#pysap-mri
+pysap-mri
+git+git://github.com/ghisvail/pyNFFT/tarball/master#egg=pynfft-1.3.0
