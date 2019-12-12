@@ -1,4 +1,4 @@
-python-pysap
+git+git://github.com/CEA-COSMIC/pysap@master#egg=python-pysap
 scikit-image
 git+git://github.com/jyhmiinlin/pynufft@master#egg=pynufft
 cython
