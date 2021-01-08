@@ -8,13 +8,13 @@ All aspects related to MRI reconstruction in this tutorial will be teached by [P
 
 ## Google Colaboratory: In development
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://mybinder.org/v2/gh/philouc/isbi19-tutorial/master)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/philouc/isbi19-tutorial/master)
 
 We can now run the codes on a google colab. However, this is in development and you may need to run some start up script at begining to ensure the codes run fine.
 
 ### Running on Google Colab
 
-1) Click on [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://mybinder.org/v2/gh/philouc/isbi19-tutorial/master).
+1) Click on [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/philouc/isbi19-tutorial/master).
 
 2) Once inside, choose the appropriate example which you want to run.
 
