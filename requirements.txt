@@ -1,6 +1,3 @@
-git+git://github.com/CEA-COSMIC/pysap@master#egg=python-pysap
-scikit-image
-#git+git://github.com/jyhmiinlin/pynufft@master#egg=pynufft
-cython
-pysap-mri
-git+git://github.com/ghisvail/pyNFFT@master#egg=pynfft-1.3.0
+setuptools>=60.0.0
+pyqt5==5.13.0
+pip>=20
