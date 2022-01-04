@@ -1,5 +1,5 @@
 #!/bin/bash
 
 pip install python-pysap pysap-mri>=0.3.0 modopt>=1.5.2 
-pip install --uprade modopt
+pip install --upgrade modopt
 pip install pynfft2
