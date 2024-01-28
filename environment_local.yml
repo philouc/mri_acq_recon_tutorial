@@ -14,6 +14,7 @@ dependencies:
       - setuptools>=60.0.0
       - python-pysap
       - modopt>=1.7.1
+      - finufft >= 2.2.0
       - pysap-mri>=0.5.0
       - mri-nufft
   
