@@ -13,6 +13,7 @@ dependencies:
   - pip:
       - setuptools>=60.0.0
       - python-pysap
-      - modopt>=1.5.2
-      - pysap-mri>=0.3.0
+      - modopt>=1.7.1
+      - pysap-mri>=0.5.0
+      - mri-nufft
   
