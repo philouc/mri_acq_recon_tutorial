@@ -1,4 +1,4 @@
-name: isbi19-tutorial
+name: 2024-cs-recon-tutorial
 channels:
   - conda-forge
 dependencies:
