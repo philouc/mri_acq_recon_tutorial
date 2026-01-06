@@ -55,5 +55,5 @@ Run:
 Note that the brand new release of PySAP has a new organization with separate plug-ins for MRI, astrophyics, tomography, etc.
 You will get it if you run:
 
-* pip3 install python-pysap pysap-mri>=0.3.0 modopt>=1.5.2 
+* pip3 install python-pysap>0.2.1 pysap-mri>=0.3.0 modopt>=1.5.2 
 * pip3 install --upgrade modopt
