@@ -1,7 +1,7 @@
 #!/bin/bash
 
 pip install finufft
-pip install python-pysap pysap-mri>=0.5.0 modopt>=1.7.1 
+pip install python-pysap>0.2.1 pysap-mri>=0.5.0 modopt>=1.7.1 
 pip install --upgrade modopt
 pip install brainweb-dl
 pip install mri-nufft==0.5.0
